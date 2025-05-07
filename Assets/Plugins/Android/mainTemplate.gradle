@@ -1,0 +1,81 @@
+apply plugin: 'com.android.library'
+**APPLY_PLUGINS**
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+// Android Resolver Dependencies Start
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // Packages/com.google.ads.mobile/GoogleMobileAds/Editor/GoogleMobileAdsDependencies.xml:12
+    implementation 'com.google.ads.mediation:applovin:13.2.0.1' // Packages/com.google.ads.mobile.mediation.applovin/source/plugin/Assets/GoogleMobileAds/Mediation/AppLovin/Editor/AppLovinMediationDependencies.xml:24
+    implementation 'com.google.ads.mediation:chartboost:9.8.3.1' // Packages/com.google.ads.mobile.mediation.chartboost/source/plugin/Assets/GoogleMobileAds/Mediation/Chartboost/Editor/ChartboostMediationDependencies.xml:25
+    implementation 'com.google.ads.mediation:facebook:6.19.0.1' // Packages/com.google.ads.mobile.mediation.metaaudiencenetwork/source/plugin/Assets/GoogleMobileAds/Mediation/MetaAudienceNetwork/Editor/MetaAudienceNetworkMediationDependencies.xml:24
+    implementation 'com.google.ads.mediation:fyber:8.3.7.0' // Packages/com.google.ads.mobile.mediation.dtexchange/source/plugin/Assets/GoogleMobileAds/Mediation/DTExchange/Editor/DTExchangeMediationDependencies.xml:24
+    implementation 'com.google.ads.mediation:imobile:2.3.2.1' // Packages/com.google.ads.mobile.mediation.imobile/source/plugin/Assets/GoogleMobileAds/Mediation/IMobile/Editor/IMobileMediationDependencies.xml:25
+    implementation 'com.google.ads.mediation:inmobi:10.8.2.0' // Packages/com.google.ads.mobile.mediation.inmobi/source/plugin/Assets/GoogleMobileAds/Mediation/InMobi/Editor/InMobiMediationDependencies.xml:24
+    implementation 'com.google.ads.mediation:ironsource:8.8.0.0' // Packages/com.google.ads.mobile.mediation.ironsource/source/plugin/Assets/GoogleMobileAds/Mediation/IronSource/Editor/IronSourceMediationDependencies.xml:24
+    implementation 'com.google.ads.mediation:maio:2.0.3.1' // Packages/com.google.ads.mobile.mediation.maio/source/plugin/Assets/GoogleMobileAds/Mediation/Maio/Editor/MaioMediationDependencies.xml:25
+    implementation 'com.google.ads.mediation:mintegral:16.9.61.0' // Packages/com.google.ads.mobile.mediation.mintegral/source/plugin/Assets/GoogleMobileAds/Mediation/Mintegral/Editor/MintegralMediationDependencies.xml:25
+    implementation 'com.google.ads.mediation:mytarget:5.27.1.1' // Packages/com.google.ads.mobile.mediation.mytarget/source/plugin/Assets/GoogleMobileAds/Mediation/MyTarget/Editor/MyTargetMediationDependencies.xml:24
+    implementation 'com.google.ads.mediation:pangle:6.5.0.8.0' // Packages/com.google.ads.mobile.mediation.pangle/source/plugin/Assets/GoogleMobileAds/Mediation/Pangle/Editor/PangleMediationDependencies.xml:25
+    implementation 'com.google.ads.mediation:unity:4.14.2.0' // Packages/com.google.ads.mobile.mediation.unity/source/plugin/Assets/GoogleMobileAds/Mediation/UnityAds/Editor/UnityMediationDependencies.xml:25
+    implementation 'com.google.android.gms:play-services-ads:24.1.0' // Packages/com.google.ads.mobile/GoogleMobileAds/Editor/GoogleMobileAdsDependencies.xml:7
+    // implementation 'com.google.android.libraries.play.games:inputmapping:1.0.0-beta' // Packages/com.google.play.inputmapping/Editor/Dependencies.xml:3
+    implementation 'com.google.android.libraries.play.games:inputmapping:1.1.0-beta' // Packages/com.google.android.libraries.play.games.inputmapping/Editor/Dependencies.xml:3
+    implementation 'com.google.android.play:app-update:2.1.0' // Packages/com.google.play.appupdate/Editor/Dependencies.xml:3
+    implementation 'com.google.android.play:asset-delivery:2.3.0' // Packages/com.google.play.assetdelivery/Editor/Dependencies.xml:3
+    implementation 'com.google.android.play:core-common:2.0.4' // Packages/com.google.play.core/Editor/Dependencies.xml:3
+    implementation 'com.google.android.play:integrity:1.4.0' // Packages/com.google.play.integrity/Editor/Dependencies.xml:3
+    implementation 'com.google.android.play:review:2.0.2' // Packages/com.google.play.review/Editor/Dependencies.xml:3
+    implementation 'com.google.android.ump:user-messaging-platform:3.1.0' // Packages/com.google.ads.mobile/GoogleMobileAds/Editor/GoogleUmpDependencies.xml:7
+    implementation 'com.unity3d.ads:unity-ads:4.14.2' // Packages/com.google.ads.mobile.mediation.unity/source/plugin/Assets/GoogleMobileAds/Mediation/UnityAds/Editor/UnityMediationDependencies.xml:33
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.61' // Packages/com.google.android.libraries.play.games.inputmapping/Editor/Dependencies.xml:4
+// Android Resolver Dependencies End
+**DEPS**}
+
+// Android Resolver Exclusions Start
+android {
+  packagingOptions {
+      exclude ('/lib/armeabi/*' + '*')
+      exclude ('/lib/armeabi-v7a/*' + '*')
+      exclude ('/lib/mips/*' + '*')
+      exclude ('/lib/mips64/*' + '*')
+      exclude ('/lib/x86/*' + '*')
+      exclude ('/lib/x86_64/*' + '*')
+  }
+}
+// Android Resolver Exclusions End
+android {
+    ndkPath "**NDKPATH**"
+    namespace "com.unity3d.player"
+
+    compileSdkVersion **APIVERSION**
+    buildToolsVersion '**BUILDTOOLS**'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    defaultConfig {
+        minSdkVersion **MINSDKVERSION**
+        targetSdkVersion **TARGETSDKVERSION**
+        ndk {
+            abiFilters **ABIFILTERS**
+        }
+        versionCode **VERSIONCODE**
+        versionName '**VERSIONNAME**'
+        consumerProguardFiles 'proguard-unity.txt'**USER_PROGUARD**
+**DEFAULT_CONFIG_SETUP**
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    aaptOptions {
+        noCompress = **BUILTIN_NOCOMPRESS** + unityStreamingAssets.tokenize(', ')
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }**PACKAGING_OPTIONS**
+}
+**IL_CPP_BUILD_SETUP**
+**SOURCE_BUILD_SETUP**
+**EXTERNAL_SOURCES**
